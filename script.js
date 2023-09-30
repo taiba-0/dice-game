@@ -15,7 +15,7 @@ const btnHold = document.querySelector('.btn--hold');
 const bg = document.querySelector('.player')
 
 // Starting Conditions
-let score, currentScore, activePlayer, playing;
+let score, currentScore, activePlayer, playing, win;
 
 //Initializing Function
 const init = function(){
@@ -43,6 +43,7 @@ const init = function(){
 
     //hidding dice
     diceEL.classList.add('hidden');
+    
 };
 
 
@@ -100,6 +101,7 @@ btnHold.addEventListener('click', function(){
             document
             .querySelector(`.player--${activePlayer}`)
             .classList.add('player--winner');
+            document.querySelector('.name').textContent = "🎉WINNER!🎉";
             document
             .querySelector(`.player--${activePlayer}`)
             .classList.remove('player--active');
